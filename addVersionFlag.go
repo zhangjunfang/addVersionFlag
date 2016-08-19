@@ -9,6 +9,7 @@ import (
 	"github.com/zhangjunfang/addVersionFlag/golang"
 )
 
+//使用本机管理  上线版本不多
 func VersionWithGit() {
 	var buff bytes.Buffer
 	file, _ := os.OpenFile("./.version", os.O_CREATE|os.O_RDWR, os.ModePerm)
@@ -24,6 +25,7 @@ func VersionWithGit() {
 	file.Close()
 }
 
+//使用本机管理  上线版本不多
 func VersionWithCustomer(v string) {
 	var buff bytes.Buffer
 	file, _ := os.OpenFile("./.version", os.O_CREATE|os.O_RDWR, os.ModePerm)
@@ -36,6 +38,8 @@ func VersionWithCustomer(v string) {
 	buff.Reset()
 	file.Close()
 }
+
+//使用本机管理  上线版本不多
 func Version(s string) {
 	var buff bytes.Buffer
 	file, _ := os.OpenFile("./.version", os.O_CREATE|os.O_RDWR, os.ModePerm)
