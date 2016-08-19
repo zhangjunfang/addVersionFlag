@@ -7,7 +7,13 @@ import (
 
 	"github.com/zhangjunfang/addVersionFlag/codeVersion"
 	"github.com/zhangjunfang/addVersionFlag/golang"
+	"github.com/zhangjunfang/addVersionFlag/plugin"
 )
+
+//使用etcd 存储版本号
+func VersionWithEtcd(key string, ip []string) (err error) {
+	return plugin.VersionEtcd(key, ip)
+}
 
 //使用本机管理  上线版本不多
 func VersionWithGit() {
